@@ -8,19 +8,7 @@ class Power extends CI_Controller {
         function __construct() 
         {
             parent::__construct();
-            // Init all variables
-            $this->data['logged_in'] = FALSE;
-            $this->data['name'] = '';
-            $this->data['userlevel'] = -1; //unprivileged
-            $this->data['power_graph'] = 'current';
-            
             $loggedin = $this->_checkLogin();
-            if($loggedin == TRUE)
-            {
-                $this->data['logged_in'] = TRUE;
-                $this->data['name'] = $this->session->userdata('username');
-                $this->data['userlevel'] = $this->session->userdata('userlevel');
-            }
         }
 	function index()
 	{
@@ -38,12 +26,18 @@ class Power extends CI_Controller {
         
         function _checkLogin()
         {
+            $this->data['logged_in'] = FALSE;
+            $this->data['name'] = '';
+            $this->data['userlevel'] = -1; //unprivileged
+            $this->data['power_graph'] = 'current';
+           
             $is_logged_in = $this->session->userdata('logged_in');
             if(isset($is_logged_in) && $is_logged_in == TRUE)
             {
-                return TRUE;
-            }
-            return FALSE; 
+                $this->data['logged_in'] = TRUE;
+                $this->data['name'] = $this->session->userdata('username');
+                $this->data['userlevel'] = $this->session->userdata('userlevel');
+            } 
         }
         
         function getPower($power){
