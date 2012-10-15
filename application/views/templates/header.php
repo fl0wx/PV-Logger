@@ -100,7 +100,7 @@
                         <ul class="dropdown-menu">
                             <?php if($userlevel == 2)
                             { ?>
-                                <li><?php echo anchor('manageusers', '<i class="icon-user"></i> Benutzeradministration');?></li>
+                                <li><?php echo anchor('manage/users', '<i class="icon-user"></i> Benutzeradministration');?></li>
                                 <li class="divider"></li>
                             <?php }?>
                             <li><?php echo anchor('user/logout', '<i class="icon-off"></i> Ausloggen');?></li>
@@ -112,7 +112,7 @@
                             
                             <?php if($userlevel == 2)
                             { ?>
-                                <?php echo anchor('manageusers', '<i class="icon-user"></i> Benutzeradministration',array('class' => 'btn'));?>
+                                <?php echo anchor('manage/users', '<i class="icon-user"></i> Benutzeradministration',array('class' => 'btn'));?>
                                 
                             <?php }?>
                             <?php echo anchor('user/logout', '<i class="icon-off"></i> Ausloggen',array('class' => 'btn'));?>
