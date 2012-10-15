@@ -69,7 +69,7 @@
                     //Nur für Administratoren sichtbar
                     if($userlevel == 2)
                     {
-                        echo anchor('rasp', 'Rasperry Pi Status');
+                        echo anchor('rasp', 'Raspberry Pi Status');
                     }
                   ?>
                 </li>

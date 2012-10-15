@@ -12,7 +12,7 @@ class Power extends CI_Controller {
             $this->data['logged_in'] = FALSE;
             $this->data['name'] = '';
             $this->data['userlevel'] = -1; //unprivileged
-            $this->data['power_graph'] = 1;
+            $this->data['power_graph'] = 'current';
             
             $loggedin = $this->_checkLogin();
             if($loggedin == TRUE)
@@ -46,20 +46,17 @@ class Power extends CI_Controller {
             return FALSE; 
         }
         
-        function getTestData($power){
-            if($power == 1)
-            { 
+        function getPower($power){
                 $this->load->model('power_model');
-                $string = $this->power_model->getDBCurrent();
-                return $string; 
-            }       
+                $string = $this->power_model->getPower($power);
+                return $string;        
         }
         
-        function test(){
+        function current(){
             if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
             {               
                 $this->data['main_content'] = 'power_view';
-                $this->data['power_graph'] = 1;
+                $this->data['power_graph'] = 'current';
                 $this->load->view('template' , $this->data);
             }
             else

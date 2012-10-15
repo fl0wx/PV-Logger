@@ -9,42 +9,28 @@
               <li>
               </li>
               <li class="">
-                <?php echo anchor('power/test', '<i class="icon-dashboard"></i> Momentanleistung');?>  
+                <?php echo anchor('power/current', '<i class="icon-dashboard"></i> Momentanleistung');?>  
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-bar-chart"></i> Leistung heute
-                </a>
+                <?php echo anchor('power/today', '<i class="icon-bar-chart"></i> Leistung heute');?>
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-bar-chart"></i> Leistung Monat
-                </a>
+                <?php echo anchor('power/month', '<i class="icon-bar-chart"></i> Leistung Monat');?>
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-bar-chart"></i> Leistung Transnet-BW
-                </a>
+                <?php echo anchor('power/transnet', '<i class="icon-bar-chart"></i> Leistung Transnet-BW');?>
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-bar-chart"></i> Selbstdefinierter Zeitraum
-                </a>
+                <?php echo anchor('power/self', '<i class="icon-bar-chart"></i> Selbstdefinierter Zeitraum');?>
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-money"></i> Wirtschaftlichkeit
-                </a>
+                <?php echo anchor('power/efficiency', '<i class="icon-money"></i> Wirtschaftlichkeit');?>
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-bar-chart"></i> Vergleich Vorjahr
-                </a>
+                <?php echo anchor('power/compare', '<i class="icon-bar-chart"></i> Vergleich Vorjahr');?>
               </li>
               <li class="">
-                <a href="#">
-                  <i class="icon-bar-chart"></i> Darstellung Wechselrichter
-                </a>
+                <?php echo anchor('power/inverter', '<i class="icon-bar-chart"></i> Wechselrichter Diagramm');?>
               </li>
             </ul>
             <br />
@@ -74,7 +60,7 @@
             
             function drawChart() {
               var jsonData = $.ajax({
-                  url: "http://studi.stoiner.de/power/getTestData/"+power_graph,
+                  url: "http://studi.stoiner.de/power/getPower/"+power_graph,
                   dataType:"json",
                   async: false
                   }).responseText;
