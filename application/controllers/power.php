@@ -22,8 +22,7 @@ class Power extends CI_Controller {
                 show_404();
             }
         }            
-	
-        
+	     
         function _checkLogin()
         {
             $this->data['logged_in'] = FALSE;
@@ -42,8 +41,8 @@ class Power extends CI_Controller {
         
         function getPower($power){
                 $this->load->model('power_model');
-                $string = $this->power_model->getPower($power);
-                return $string;        
+                $res = $this->power_model->getPower($power);
+                return $res;        
         }
         
         function current(){
@@ -59,6 +58,96 @@ class Power extends CI_Controller {
             }   
         }
         
+        function today(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'today';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
+        
+        function month(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'month';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
+        
+        function transnet(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'transnet';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
+        
+        function self(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'self';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
+        
+        function efficiency(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'efficiency';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
+        
+        function compare(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'compare';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
+        
+        function inverter(){
+            if($this->data['logged_in'] == TRUE && $this->data['userlevel'] >= 0)
+            {               
+                $this->data['main_content'] = 'power_view';
+                $this->data['power_graph'] = 'inverter';
+                $this->load->view('template' , $this->data);
+            }
+            else
+            {
+                show_404();
+            }   
+        }
       
 	
 }
