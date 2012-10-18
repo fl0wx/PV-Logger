@@ -1,0 +1,8 @@
+# /robots.txt
+User-agent: *
+Disallow: /application/
+Disallow: /css/
+Disallow: /font/
+Disallow: /img/
+Disallow: /js/
+Disallow: /system/

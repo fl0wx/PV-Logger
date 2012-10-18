@@ -49,6 +49,11 @@ class Manage extends CI_Controller {
                 $this->data['userlevel'] = $this->session->userdata('userlevel');
             } 
         }
+        
+        function edituser($userid)
+        {
+            
+        }
 	
 }
 

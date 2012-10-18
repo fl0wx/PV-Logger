@@ -1,13 +1,12 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Power_model extends CI_Model {
-    function getTestData(){
-        $data = file_get_contents("data.json"); 
-        echo $data;
-    }
+class Power_model extends CI_Model 
+{
     
-    function getPower($power){
+    //Testfunktion für GoogleChartTools
+    function getPower($power)
+    {
         $query = $this->db->get('power');
         
         if($query->num_rows == 1)
@@ -20,5 +19,15 @@ class Power_model extends CI_Model {
             
         }
     }
+    
+    function getCurrentP($inv = NULL)
+    {
+        //Nur bestimmte Wechselrichterdaten abrufen, sonst alle drei
+        if($inv != NULL) 
+        {
+            
+        }
+    }
+    
     
 }
