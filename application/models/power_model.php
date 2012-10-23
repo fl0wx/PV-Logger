@@ -12,7 +12,7 @@ class Power_model extends CI_Model
         if($query->num_rows == 1)
         {
             $row = $query->row();
-            $res = $row->$power;
+            $res = $row->current;
             $cols = array(array("label" => "Wh","type" => "number"));
             $rows = array(array('c' => array( array( 'v' => $res))));
             echo '{ "cols": '.json_encode($cols).', "rows":'.json_encode($rows).'}'; 

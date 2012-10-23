@@ -52,13 +52,9 @@
                   power_graph='<?php echo $power_graph;?>';
 
                   //Lade benötigte Packages
-                  if(power_graph == 'current'){
-                      google.load('visualization', '1', {'packages':['gauge']});
-                  }else{
-                      google.load('visualization', '1', {'packages':['corechart']});
-                  }
-                  
-                  // Set a callback to run when the Google Visualization API is loaded.
+                  google.load('visualization', '1', {'packages':['gauge','corechart']});
+                 
+                  //Zeichenfunktion aufrufen sobald die API geladen ist
                   google.setOnLoadCallback(drawChart);
               </script>
               <div id="google_chart">
