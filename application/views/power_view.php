@@ -57,6 +57,32 @@
                   //Zeichenfunktion aufrufen sobald die API geladen ist
                   google.setOnLoadCallback(drawChart);
               </script>
+              <?php  if ($power_graph  == 'self'){?>
+                <div class="alert alert-error" id="alert">
+                    <strong>Zeitraum eingeben</strong>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th>
+                              Start
+                              <a href="#" class="btn small" id="date-start" data-date-format="yyyy-mm-dd" data-date="2012-02-20">Ändern</a>
+                          </th>
+                          <th>
+                              Ende
+                              <a href="#" class="btn small" id="date-end" data-date-format="yyyy-mm-dd" data-date="2012-02-25">Ändern</a>
+                          </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td id="date-start-display">2012-02-20</td>
+                          <td id="date-end-display">2012-02-25</td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+              <?php }?>
               <div id="google_chart">
           
               </div>

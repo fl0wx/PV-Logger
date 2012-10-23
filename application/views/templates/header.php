@@ -16,6 +16,7 @@
     </style>
     <link href="<?php echo base_url();?>css/bootstrap-responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>css/font-awesome.css">
+    <link href="<?php echo base_url();?>css/datepicker.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
       </script>
@@ -25,6 +26,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="<?php echo base_url();?>js/powercharts.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-datepicker.js"></script>
   </head>
   
   <body>
