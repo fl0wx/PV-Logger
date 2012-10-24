@@ -26,7 +26,8 @@
     <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="<?php echo base_url();?>js/powercharts.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-datepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/locales/bootstrap-datepicker.de.js" charset="UTF-8"></script>
   </head>
   
   <body>

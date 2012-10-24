@@ -63,10 +63,10 @@ function drawChart() {
         var startDate = new Date(2012,1,20);
         var endDate = new Date(2012,1,25);
         $('#date-start')
-            .datepicker()
+            .datepicker({language:'de'})
             .on('changeDate', function(ev){
                 if (ev.date.valueOf() > endDate.valueOf()){
-                    $('#alert').show().find('strong').text('The start date must be before the end date.');
+                    $('#alert').show().find('strong').text('Startdatum muss vor dem Enddatum liegen.');
                 } else {
                     $('#alert').hide();
                     startDate = new Date(ev.date);
@@ -75,10 +75,10 @@ function drawChart() {
                 $('#date-start').datepicker('hide');
             });
         $('#date-end')
-            .datepicker()
+            .datepicker({language:'de'})
             .on('changeDate', function(ev){
                 if (ev.date.valueOf() < startDate.valueOf()){
-                    $('#alert').show().find('strong').text('The end date must be after the start date.');
+                    $('#alert').show().find('strong').text('Startdatum muss vor dem Enddatum liegen.');
                 } else {
                     $('#alert').hide();
                     endDate = new Date(ev.date);
