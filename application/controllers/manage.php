@@ -20,8 +20,8 @@ class Manage extends CI_Controller {
 	{
             if($this->data['logged_in'] == TRUE && $this->data['userlevel'] == 2)
             {
-                $this->load->model('manageusers_model');
-                $query = $this->manageusers_model->get_users();
+                $this->load->model('manage_model');
+                $query = $this->manage_model->get_users();
                 
                 $this->data['manageusers'] = $query;
                 

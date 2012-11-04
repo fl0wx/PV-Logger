@@ -5,7 +5,10 @@
             if($logged_in != TRUE)
             { ?>
             <div>
-              <h1>
+              <h1 class="hidden-phone">
+                Übersicht
+              </h1>
+              <h1 class="visible-phone" style="font-size: 40px">
                 Übersicht
               </h1>
               <p>
@@ -16,7 +19,10 @@
            else
            { ?>
               <div>
-              <h1>
+              <h1 class="hidden-phone">
+                Übersicht
+              </h1>
+              <h1 class="visible-phone" style="font-size: 40px">
                 Übersicht
               </h1>
               <p>

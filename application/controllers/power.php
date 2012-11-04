@@ -41,7 +41,16 @@ class Power extends CI_Controller {
         
         function getPower($power){
                 $this->load->model('power_model');
-                $res = $this->power_model->getPower($power);
+                switch($power)
+                {
+                    case ("current"):
+                    $res = $this->power_model->getCurrentP();
+                    break;
+
+                    default:
+                    echo "Error";
+                    break;
+                }
                 return $res;        
         }
         

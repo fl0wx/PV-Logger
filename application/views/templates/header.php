@@ -22,12 +22,18 @@
       </script>
     <![endif]-->
     <link rel="shortcut icon" href="<?php echo base_url();?>ico/favicon.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.js"></script>   
+<?php if($main_content == "power_view"){?>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="<?php echo base_url();?>js/powercharts.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-datepicker.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>js/locales/bootstrap-datepicker.de.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/locales/bootstrap-datepicker.de.js" charset="UTF-8"></script>   
+<?php 
+}if($main_content == "manageusers_view"){?>
+    <script type="text/javascript" src="<?php echo base_url();?>js/manageusers.js"></script>
+<?php }?>
+
   </head>
   
   <body>
