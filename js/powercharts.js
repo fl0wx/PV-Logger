@@ -22,26 +22,6 @@ function drawChart() {
       break;
     case 'today':
       $('div.page-header').html('<h1>Leistung heute</h1>');
-    
-      data = google.visualization.arrayToDataTable([
-          ['Stunde', 'Wh'],
-          ['0.25',  100],
-          ['0.5',  120],
-          ['0.75',  124],
-          ['1',  125],
-          ['2',  100],
-          ['3',  120],
-          ['4',  124],
-          ['5',  150],
-          ['8',  420],
-          ['9',  830],
-          ['11',  1120],
-          ['12',  1650],
-          ['14',  2334],
-          ['17',  980],
-          ['19',  670],
-          ['24',  100],
-        ]);
 
         options = {
           title: 'Leistung',

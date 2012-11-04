@@ -46,6 +46,10 @@ class Power extends CI_Controller {
                     case ("current"):
                     $res = $this->power_model->getCurrentP();
                     break;
+                
+                    case ("today"):
+                    $res = $this->power_model->getDailyPower();
+                    break;
 
                     default:
                     echo "Error";
