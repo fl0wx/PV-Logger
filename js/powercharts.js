@@ -34,6 +34,14 @@ function drawChart() {
       break;
     case 'month':
       $('div.page-header').html('<h1>Leistung Monat</h1>');
+
+        options = {
+          title: 'Leistung',
+          hAxis: {title: 'Tag',  titleTextStyle: {color: 'red'}}
+        };
+
+        chart = new google.visualization.AreaChart(document.getElementById('google_chart'));
+        chart.draw(data, options);
       break;
     case 'transnet':
       $('div.page-header').html('<h1>Leistung Transnet-BW</h1>');

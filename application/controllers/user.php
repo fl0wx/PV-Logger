@@ -11,6 +11,11 @@ class User extends CI_Controller {
             $loggedin = $this->_checkLogin();
         }
         
+        function index()
+        {
+            show_404();
+        }
+       
         function validate()
         {
             $this->load->model('user_model');

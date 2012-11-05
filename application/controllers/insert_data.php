@@ -11,4 +11,13 @@ class Insert_data extends CI_Controller {
     {
         show_404();
     }
+    
+    function insertInvData($encrString = NULL)
+    {
+        if($encrString != NULL)
+        {
+            echo $encrString;
+        }
+        
+    }
 }

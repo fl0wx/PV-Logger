@@ -52,7 +52,7 @@ class Power extends CI_Controller {
                     break;
 
                     default:
-                    echo "Error";
+                    $res = "Error";
                     break;
                 }
                 return $res;        
