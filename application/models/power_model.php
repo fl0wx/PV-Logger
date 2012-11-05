@@ -4,22 +4,6 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Power_model extends CI_Model 
 {
     
-    //Testfunktion für GoogleChartTools
-    function getPower($power)
-    {
-        $query = $this->db->get('power');
-        
-        if($query->num_rows == 1)
-        {
-            $row = $query->row();
-            $res = $row->current;
-            $cols = array(array("label" => "Wh","type" => "number"));
-            $rows = array(array('c' => array( array( 'v' => $res))));
-            echo '{ "cols": '.json_encode($cols).', "rows":'.json_encode($rows).'}'; 
-            
-        }
-    }
-    
     function getCurrentP($inv = NULL)
     {
         $dailydate = date('Y-m-d');
@@ -90,9 +74,29 @@ class Power_model extends CI_Model
             array_push($rows, $res);
         }
 
-        $cols = array(array("label" => "Stunde","type" => "string"),array("label" => "Wh","type" => "number"));
-        
+        $cols = array(array("label" => "Stunde","type" => "string"),array("label" => "Watt","type" => "number"));        
         echo '{ "cols": '.json_encode($cols).', "rows":'.json_encode($rows).'}';
+    }
+    
+    function getMonthPower()
+    {
+        $actualMonth = date('Y-m');
+        $firstMonthDay = $actualMonth."-01";
+        
+        $this->db->where('date >=', $firstMonthDay)->order_by('time')->order_by('date')->group_by('date');
+        $query = $this->db->get('pv_data');
+        
+        //Rows Array mit daten füllen
+        $rows = array();
+        foreach ($query->result() as $row)
+        {
+            $res = array('c' => array( array( 'v' => $row->date),array( 'v' => $row->daily_energy)));
+            array_push($rows, $res);
+        }
+
+        $cols = array(array("label" => "Stunde","type" => "string"),array("label" => "Wh","type" => "number"));        
+        echo '{ "cols": '.json_encode($cols).', "rows":'.json_encode($rows).'}';
+        
     }
     
     

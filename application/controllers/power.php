@@ -50,7 +50,11 @@ class Power extends CI_Controller {
                     case ("today"):
                     $res = $this->power_model->getDailyPower();
                     break;
-
+                
+                    case ("month"):
+                    $res = $this->power_model->getMonthPower();
+                    break;
+                
                     default:
                     $res = "Error";
                     break;
