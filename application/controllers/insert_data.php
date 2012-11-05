@@ -25,7 +25,7 @@ class Insert_data extends CI_Controller {
             if($validuser == TRUE)
             {
                 echo "authenticated";
-                $this->insert_data_model->insertData($data);
+                $this->insert_data_model->addData($data);
             }
             else 
             {

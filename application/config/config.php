@@ -127,7 +127,7 @@ $config['subclass_prefix'] = 'MY_';
 |
 */
 //$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
-$config['permitted_uri_chars'] = 'a-z 0-9_-'; //Sicherheit erhöhen - nur benötigte Zeichen zulassen
+$config['permitted_uri_chars'] = 'a-z 0-9_:-'; //Sicherheit erhöhen - nur benötigte Zeichen zulassen
 
 
 /*
